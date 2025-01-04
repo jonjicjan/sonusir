@@ -5,7 +5,7 @@ import AuthForm from './components/AuthForm';
 import Course from './components/Course';
 import { ReactTyped } from 'react-typed'; // Import ReactTyped
 import Footer from './components/Footer'; // Import the Footer component
-
+import  './Course.css';
 
 
 
@@ -78,7 +78,7 @@ function App() {
         {!user ? (
           <div className="flex flex-col items-center justify-center min-h-screen">
             <section className="py-12 bg-white text-center" id="courses">
-              <h2 className="text-3xl font-bold text-purple-900 mb-6">Welcome to Learning Hub! Please log in to explore our courses </h2>
+              <h2 className="text-3xl font-bold text-purple-900 mb-6">Welcome to Learning Hub! AI-Powered Learning, Crafted for Your Success. </h2>
               <p className="text-lg text-gray-600 mb-8">
                 Check out some of our most popular courses available now.
               </p>
@@ -159,7 +159,7 @@ function App() {
           </div>
         ) : (
           <div>
-            <div className="flex justify-center items-center mb-8">
+            <div className="headingtext flex justify-center items-center mb-8">
               <div className="min-h-[3rem] flex items-center">
                 <ReactTyped
                   strings={[

@@ -6,6 +6,21 @@ interface CreateCourseData {
   imageUrl?: string;
 }
 
+export async function fetchCourses() {
+  const { data, error } = await supabase
+    .from('courses')
+    .select(`
+      *,
+      profiles (
+        full_name
+      )
+    `)
+    .order('created_at', { ascending: false });
+
+  if (error) throw error;
+  return data;
+}
+
 export async function createCourse({ title, description, imageUrl }: CreateCourseData) {
   const { data: { user } } = await supabase.auth.getUser();
   if (!user) throw new Error('Not authenticated');

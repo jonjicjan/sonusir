@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { supabase } from '../lib/supabase';
-import { LogOut,LogIn } from 'lucide-react';
+import { LogOut, LogIn } from 'lucide-react';
 import { FaGraduationCap } from 'react-icons/fa'; // Importing the graduation cap icon
 import AuthForm from './AuthForm';
 
@@ -24,7 +24,7 @@ export default function Navbar({ user }: NavbarProps) {
   };
 
   return (
-    <nav className="bg-black shadow-lg">
+    <nav className="bg-black shadow-lg fixed top-0 left-0 w-full z-50">
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex justify-between h-16">
           <div className="flex items-center">
@@ -48,8 +48,7 @@ export default function Navbar({ user }: NavbarProps) {
                 onClick={handleSignIn}
                 className="flex items-center text-white hover:text-purple-700"
               >
-              <LogIn className="w-4 h-4 mr-2" /> Sign In
-               
+                <LogIn className="w-4 h-4 mr-2" /> Sign In
               </button>
             )}
           </div>

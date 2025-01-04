@@ -1,6 +1,9 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../Course.css';
+import AIAssistant from './ai/AIAssistant';
+import Loader from './ai/Loader';
+//import { Loader } from 'lucide-react';
 
 const courses = [
   {
@@ -103,7 +106,8 @@ const courses = [
 
 const Course = () => {
   return (
-    <div className="container">
+    <div className="container ">
+     <span className="flex items-center  justify-left space-x-4">  <Loader /> <AIAssistant />     </span> 
       <div className="row">
         {courses.map((course, index) => (
           <div className="col-md-6 d-flex justify-content-center mb-4" key={index}>
@@ -120,7 +124,6 @@ const Course = () => {
                 </li>
               </ul>
               <button className="button"><a href={course.url} >View Course</a></button>
-              
             </div>
           </div>
         ))}
